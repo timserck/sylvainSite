@@ -1,0 +1,720 @@
+/*
+Theme Name: theme sylvain
+Author: Timserck
+Description: personal site
+Version: 0.0.1
+Tags: bootstrap
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:active, a:hover {
+	outline: 0;
+}
+
+
+a:before,
+a:after {
+	pointer-events: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------
+Super Form Reset
+A couple of things to watch out for:
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+----------------------------------------------------------------------------------------------------*/
+
+input,
+label,
+select,
+button,
+textarea
+{
+	margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+
+	/* Browsers have different default form fonts */
+	font-size:13px;
+	font-family:Arial;
+}
+
+/* Remove the stupid outer glow in Webkit */
+input:focus
+{
+	outline:0;
+}
+
+/* Box Sizing Reset
+-----------------------------------------------*/
+
+/* All of our custom controls should be what we expect them to be */
+input,
+textarea
+{
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+}
+
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select
+{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+/* Text Inputs
+-----------------------------------------------*/
+
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week]
+{
+}
+
+/* Button Controls
+-----------------------------------------------*/
+
+input[type=checkbox],
+input[type=radio]
+{
+	width:13px;
+	height:13px;
+}
+
+/* File Uploads
+-----------------------------------------------*/
+
+input[type=file]
+{
+
+}
+
+/* Search Input
+-----------------------------------------------*/
+
+/* Make webkit render the search input like a normal text field */
+input[type=search]
+{
+	-webkit-appearance:textfield;
+	-webkit-box-sizing:content-box;
+}
+
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration
+{
+	display:none;
+}
+
+/* Buttons
+-----------------------------------------------*/
+
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"]
+{
+	/* Fix IE7 display bug */
+	overflow:visible;
+	width:auto;
+}
+
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button
+{
+	padding:0;
+	border:0;
+	background:none;
+}
+
+/* Textarea
+-----------------------------------------------*/
+
+textarea
+{
+	/* Move the label to the top */
+	vertical-align:top;
+
+	/* Turn off scroll bars in IE unless needed */
+	overflow:auto;
+}
+
+/* Selects
+-----------------------------------------------*/
+
+select
+{
+
+}
+
+select[multiple]
+{
+	/* Move the label to the top */
+	vertical-align:top;
+}
+
+
+
+/* ---------------------------------------------------------------------------- base */
+*::selection {
+	background: rgba(29, 158, 122, .8);
+	color: #fff;
+}
+*::-moz-selection {
+	background: rgba(29, 158, 122, .8);
+	color: #fff;
+}
+*::-webkit-selection {
+	background: rgba(29, 158, 122, .8);
+	color: #fff;
+}
+
+
+html { margin-top: 0px !important; }
+* html body { margin-top: 0px !important; }
+@media screen and ( max-width: 782px ) {
+	html { margin-top: 0px !important; }
+	* html body { margin-top: 0px !important; }
+}
+
+
+
+.icon-target{
+	display: none;
+}
+html {
+	font-size: 62.5%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 16px;
+}
+html,
+body {
+	background: #e2ecf1;
+	font-family: "merriweather", serif;
+	-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-weight: 400;
+	line-height: 1.8;
+}
+main {
+	max-width: 1020px;
+	margin: 0 auto;
+	padding: 1rem 2rem;
+	display: block;
+	position: relative;
+
+}
+
+
+/* ----------------------------------------------------------------------------- font */
+
+h1,
+h2,
+h3{
+	margin: 0;
+	padding: 0;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+}
+h1 {
+	font-size: 3.1rem;
+
+}
+h2 {
+	font-size: 2.5rem;
+	color: rgba(0, 0, 0, .8);
+}
+h3,.header__p,.header__a {
+	font-size: 2rem;
+	color: rgba(0, 0, 0, .75);
+}
+p,
+a {
+	font-size: 1.6rem;
+	font-family: 'Raleway', sans-serif;
+	color: rgba(0, 0, 0, .6);
+}
+a[target="_blank"] {
+	cursor: url(../img/new-tab.png), 50% !important;
+	/*firefox and ff*/
+	cursor: alias;
+}
+
+
+
+#nav{
+
+	position: relative;
+    height: 50px;
+	padding-bottom: 1.5em;
+}
+
+#nav .nav__container{
+
+
+
+}
+
+#nav .container__menu--primary{
+
+	position: absolute;
+	left: 0;
+	top:0;
+	width: 100%;
+	height: 50px;
+
+}
+
+
+#nav .container__menu--primary .menu--logo {
+
+	float: left;
+	font-size: 50px;
+	line-height: 50px;
+
+}
+
+
+
+
+#nav .container__menu--primary .menu-item {
+
+    float: right;
+	font-size: 50px;
+	line-height: 50px;
+
+}
+
+#nav .container__menu--primary .menu .menu-item a{
+
+    display:block;
+    padding: 0px 5px;
+	opacity: 1;
+
+}
+
+
+#nav .container__menu--primary .menu .menu-item a:hover{
+
+	opacity: .2;
+
+}
+
+#nav .icon-mobile{
+	z-index: 10;
+	position: fixed;
+	top: 1rem;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+    line-height: 50px;
+	display: none;
+}
+
+
+
+#nav .icon-mobile__link{
+
+
+	color: white;
+
+
+}
+
+
+@media screen and (max-width: 600px)
+{
+
+
+	#nav.active .container__menu--primary{
+
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top:0;
+		left: 0;
+		background: red;
+		display: flex;
+		z-index: 5;
+		align-items: center;
+		justify-content: center;
+
+	}
+
+
+
+    #nav .icon-mobile{
+
+        display: block;
+		z-index: 20;
+
+    }
+
+	#nav.active .icon-mobile__link{
+
+		display: block;
+		color:black;
+		font-size: 15px;
+
+	}
+
+	#nav.active .icon-mobile__round{
+
+		border: 1px solid black;
+		background: white;
+
+
+	}
+
+
+
+	#nav .icon-mobile__round{
+		z-index: -1;
+		border-radius: 50%;
+		height: 50px;
+		width: 50px;
+		line-height: 50px;
+		background: black;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+	}
+
+   #nav #navigation{
+    display: none;
+    }
+
+	#nav.active #navigation{
+		display: block;
+	}
+
+    #nav .menu .menu-item{
+
+		text-align: center;
+        float: none;
+        display: block;
+
+    }
+
+	#nav.active #menu--logo {
+		float: none;
+	}
+
+
+	#nav.active #menu--logo h1{
+		text-align: center;
+	}
+
+
+
+}
+
+.header{
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
+.header__p {
+	padding: 1.5em 0;
+}
+
+.header__a {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	color: #404d5b;
+	vertical-align: bottom;
+	text-decoration: none;
+	white-space: nowrap;
+
+
+	overflow: hidden;
+	font-weight: 500;
+}
+
+
+.header__a::before{
+
+	display: block;
+	pointer-events: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(52,73,94,0.2);
+	content: '';
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
+	-webkit-transform: translateY(95%);
+	transform: translateY(95%);
+}
+
+
+
+.header__a:hover::before,  .header__a:focus::before {
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+
+.footer__baseline{
+	display: block;
+
+	margin: 2.5rem auto;
+	text-align: center;
+
+}
+
+.posts{
+
+}
+
+
+
+.post{
+
+	padding: 5rem 7rem 5rem 6rem;
+	position: relative;
+	margin-top: 7.5rem;
+	margin-bottom: 7.5rem;
+	background: #f69f09;
+	align-items: center;
+	justify-content: center;
+	height: 500px;
+	background-position: center;
+	-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+	background-size: cover; /* version standardisée */
+	background: no-repeat;
+
+}
+
+.post:last-child{
+	margin-bottom: 0rem;
+}
+
+.post:first-child{
+	margin-top: 0rem;
+}
+
+
+
+.post__link{
+
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 4;
+}
+
+.post__description{
+	max-width: 480px;
+	position: absolute;
+	display: block;
+	width: 100%;
+	/* height: 100%; */
+	right: -50px;
+	top: 50%;
+	transform: translateY(-50%);
+
+
+
+}
+@media screen and (max-width: 1020px) {
+
+
+	.post__description{
+
+		right: 25px;
+		top: 50px;
+		bottom: 0;
+		max-width: calc(100% - 50px);
+		transform: translateY(0%);
+
+
+
+
+	}
+
+
+}
+
+.post__description--wrap{
+
+
+	position: relative;
+	background: white;
+	padding: 5.5rem 3.65rem 5.25rem;
+	height: auto;
+
+
+	position: relative;
+
+
+}
+
+
+@media screen and (max-width: 1020px) {
+
+
+	.post__description--wrap{
+
+		padding: 2.5rem 1.65rem 2.25rem;
+
+
+
+
+	}
+
+
+}
+
+.comment-form label{
+	display: block;
+}
+
+.comment-form input, .comment-form textarea {
+	display: block;
+	width: 100%;
+}
+
+.email-notes{
+	font-size: .9rem;
+}
+
+
+
+
+
+.header__baseline, .singlePost__header,  .singlePost__content{
+
+
+	margin-top: 5rem ;
+	margin-bottom: 5rem ;
+
+	max-width: 640px;
+}
+
+
+
+
+
+
+
+
+
+
+
